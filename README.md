@@ -45,6 +45,20 @@ You should have the following installed (can be done via homebrew on Mac):
 4. Create the cluster by running the script `03-create-cluster.sh`
 5. Your cluster should now in the process of being created, with a kubeconfig generated for you.
 
+    ```bash
+    $ kubectl get clusters -A
+    NAME         CLUSTERCLASS   PHASE         AGE   VERSION
+    capi-eks-2                  Provisioned   28m
+
+    $ clusterctl describe cluster capi-eks-2
+    NAME                                                              READY  SINCE
+    Cluster/capi-eks-2                                                True   15m
+    ├─ClusterInfrastructure - AWSManagedCluster/capi-eks-2
+    ├─ControlPlane - AWSManagedControlPlane/capi-eks-2-control-plane  True   15m
+    └─Workers
+      └─MachinePool/capi-eks-2-pool-0                                 True   13m
+    ```
+
 ## Further Reading & References
 
 - [Cluster API Book](https://cluster-api.sigs.k8s.io/)
