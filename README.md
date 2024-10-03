@@ -43,7 +43,9 @@ You should have the following installed (can be done via homebrew on Mac):
 2. Setup the management cluster by running the script `01-setup-mgmt-cluster.sh`
 3. Generate the necessary cluster manifests by running the script `02-setup-mgmt-clsuter.sh`
 4. Create the cluster by running the script `03-create-cluster.sh`
-5. Your cluster should now in the process of being created, with a kubeconfig generated for you.
+5. Your cluster should now in the process of being created, with a kubeconfig generated for you
+
+    *Note:* in order to import the cluster into MCE/ACM, you'll need to update the cluster with the correct Service Account, as well as updating the kubeconfig to contain the token.
 
     ```bash
     $ kubectl get clusters -A
