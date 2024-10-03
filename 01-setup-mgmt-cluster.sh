@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # Create the kind cluster
-kind create cluster --name capi-mgmt3
+kind create cluster --name $KIND_MGMT_CLUSTER_NAME
 
 # Cluster API Provider for AWS ships with clusterawsadm, a utility to help you manage IAM objects
 # The clusterawsadm binary uses env variables and encodes them in a value to be stored in a Kubernetes Secret 
 # for the Kind cluster to fetch necessary permissions to create the workload clusters.
-clusterawsadm bootstrap iam create-cloudformation-stack --region ${AWS_REGION}
+clusterawsadm bootstrap iam create-cloudformation-stack --region $AWS_REGION
 
 # install the Cluster API components for AWS, this will help transform the Kind cluster into a management cluster
 clusterctl init --infrastructure aws

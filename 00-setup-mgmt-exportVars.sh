@@ -13,6 +13,7 @@ export WORKER_MACHINE_COUNT=3
 export KUBERNETES_VERSION="v1.30.1"
 export NODE_INSTANCE_TYPE="t3.medium"
 
+export KIND_MGMT_CLUSTER_NAME="capi-mgmt"
 export AWS_EKS_CLUSTER_NAME="capi-eks-2"
 export AWS_SSH_KEY_NAME="$AWS_EKS_CLUSTER_NAME"
 export AWS_B64ENCODED_CREDENTIALS=$(clusterawsadm bootstrap credentials encode-as-profile)
